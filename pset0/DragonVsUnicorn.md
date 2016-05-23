@@ -1,11 +1,7 @@
-##PSET0 uses Scratch##
+##PSET0 uses [Scratch](https://scratch.mit.edu/)##
 
-I created a unicorn being chased by a dragon scene. 
+I created a unicorn being chased by a cricket-singing dragon scene. 
 
-It was a bit of fun.
+The Emperor of the Republic/KalikaKay 
 
-As to be expected, one cannot accomplish with scratch all that one would hope.
-
-Or maybe they can and I'm just too lazy to try it.
-
-Kalika kay/The Emperor of the Reuplic [PSET0](https://scratch.mit.edu/projects/108964307/)
+[PSET0](https://scratch.mit.edu/projects/108964307/)
