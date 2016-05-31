@@ -70,8 +70,8 @@ int main(int argc, string argv[ ])
                 //Requirements for satisfaction.
                 if ( (asciing >= 65 && asciing <= 90) || (asciing >= 97 && asciing <= 122) )
                 {
-                    keyring = (char) key + asciing;
-                    
+                    keyring = key + asciing;
+                   
                     //lower or upper 
                     if (asciing < 90) 
                     {

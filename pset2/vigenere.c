@@ -22,51 +22,46 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
+
+bool ltr(string key);
+char lower(int a);
 
 int main(int argc, string argv[ ])
 {
     //for my one and only. 
     if (argc == 2)
     {
-        
-        int key = atoi(argv[1]);
-        
-        //prepare for the well endowed.
-        if (key >= 26)
+        //letters only
+        if (ltr(argv[1]) == 1)
         {
-            key = key % 26;  
-        }
-       
-        //printf("What are you insinuating? ");
-        string desire = GetString();
-        
-        
-        //as you wish.
-        if (key == 0)
-        {   
-            printf("%s", desire);
-            return 0;
-        }
-        
-        //stay positive.
-        if (key >= 0) 
-        {
+            
+            string keyset = argv[1];
+            string desire = GetString();
             
             //let's take care of that, shall we?
             int length = strlen(desire);
             string satisfaction = desire;
-            int asciing, keyring;
+            int asciing, keyring, to, unlock, wanting;
             
+             //Thing about a set of keys, owner knows where the key goes.
+            to = 0;
+            wanting = 0;
             
-            for (int i = length - 1; i >= 0; i--) 
+            //loop through all the characters.
+            for (int i = 0; i <= length - 1; i++) 
             {
                 asciing = (int) desire[i];
-        
-                    
+                
                 //Requirements for satisfaction.
                 if ( (asciing >= 65 && asciing <= 90) || (asciing >= 97 && asciing <= 122) )
                 {
-                    keyring = (char) key + asciing;
+                   
+                    to =  wanting % strlen(keyset);
+                    unlock = (int) keyset[to];
+                    
+                    //key is lowercase only.
+                    keyring = asciing + ((int) lower(unlock) - 97);
                     
                     //lower or upper 
                     if (asciing < 90) 
@@ -87,9 +82,9 @@ int main(int argc, string argv[ ])
                     }
                     
                     //calculate satisfaction.
-                    satisfaction[i] = keyring;
-                    
-                
+                    satisfaction[i] = (char) keyring;
+                    wanting++;
+            
                 } else {
                     
                     //What is desired.
@@ -104,7 +99,7 @@ int main(int argc, string argv[ ])
        
         } else {
             
-            printf("You're not getting anywhere with that negativity.\n");
+            printf("The key is letters only.\n");
             return 1;
         }
         
@@ -114,4 +109,46 @@ int main(int argc, string argv[ ])
         return 1;
     
     }
+}
+
+/*
+returns 0 if the string contains only letters of the alphabet.
+returns 1 if it does not.
+*/
+bool ltr (string key) 
+{
+    
+    int turnkey =  (int) key[0];
+    
+    for (int i = 0; i <= strlen(key) - 1; i++) 
+    {
+        
+        turnkey = (int) key[i];
+                
+        if ((turnkey >= 65 && turnkey <= 90) || (turnkey >= 97 && turnkey <= 122)) 
+        {
+            
+        } else {
+            return 0;
+        }
+
+    }
+    
+    return 1;
+}
+
+
+/*
+return a lowercase letter. assumes is alpha; takes integer representation of a character.
+*/
+char lower (int a) 
+{
+    int ascii32 = (int) a;
+    
+    if (ascii32 <= 90) 
+    {
+        ascii32 = a + 32;
+    }
+    
+    return (char) ascii32;
 }
