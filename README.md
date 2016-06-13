@@ -12,4 +12,4 @@ As long as she passes check50; I'm running on happy.
 
 The whole enchilada is just a review. 
 
-I'm gearing up. 
+[I'm gearing up](https://ide.c9.io/kalikakay/cs-wkspce). 
